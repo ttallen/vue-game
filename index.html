@@ -15,10 +15,20 @@
 </head>
 <body>
     <div id="app">
+        <h1>{{ win_text }}</h1>
+        <ul class="game_text">
+            <li class="block left circle"></li>
+            <li class="circle_win">{{ o_text }}</li>
+            <li class="vs">vs</li>
+            <li class="cross_win">{{ x_text }}</li>
+            <li class="block right cross"></li>
+        </ul>
         <div class="block_area">
-            <div class="block" v-for="(block, index) in blocks" :class="{ circle: block.type == 1,cross: block.type == -1 }" @click="go(block)">
-                <!-- <div class="number">{{ index + 1 }}</div> -->
-            </div>
+            <div class="block" v-for="(block, index) in blocks" :class="{ circle: block.type == 1,cross: block.type == -1 }" @click="go(block)"></div>
+        </div>
+        <div class="btn_group">
+            <h2 class="restart" @click="restart">Restart</h2>
+            <h2 class="again" @click="again">Next Run</h2>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>

@@ -27,6 +27,33 @@ html,body {
     align-items: center;
 }
 
+.game_text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+    list-style: none;
+    border: solid #fff 2px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 0;
+    margin-top: 0;
+    font-size: 2rem;
+    @include mobile {
+        width: 90vw;
+    }
+    .block {
+        @include size(50px);
+        border: none;
+        &.left {
+            border-right: solid #fff 2px;
+        }
+        &.right {
+            border-left: solid #fff 2px;
+        }
+    }
+}
+
 .block_area {
     @include size(150px*3);
     display: flex;
@@ -87,3 +114,25 @@ html,body {
     }
 }
 
+.btn_group {
+    width: 450px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    @include mobile {
+        width: 100vw;
+    }
+    .restart {
+        cursor: pointer;
+        &:hover {
+            color: #ccc;
+        }
+    }
+    .again {
+        cursor: pointer;
+        &:hover {
+            color: #ccc;
+        }
+    }
+    
+}
