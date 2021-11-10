@@ -1,0 +1,89 @@
+$color_bg: #1D1E22;
+$color_red: #f42;
+$color_blue: #56f;
+
+@mixin size($w,$h:$w) {
+    width: $w;
+    height: $h;
+}
+
+@mixin mobile {
+    @media(max-width: 475px) {
+        @content
+    }
+}
+
+html,body {
+    background-color: $color_bg;
+    @include size(100%);
+    margin: 0;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.block_area {
+    @include size(150px*3);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include mobile {
+        @include size(90vw);
+    }
+}
+
+.block {
+    @include size(150px);
+    border: solid #fff 1px;
+    position: relative;
+    box-sizing: border-box;
+    @include mobile {
+        @include size(30vw);
+    }
+
+    &.small {
+        @include size(50px)
+    }
+
+    &::after,&::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        transition: .4s;
+    }
+    &.circle {
+        &::after,&::before {
+            border-radius: 50%;
+        }
+        &::before {
+            @include size(75%);
+            background-color: $color_red;
+        }
+        &::after {
+            @include size(55%);
+            background-color: $color_bg;
+        }
+    }
+    &.cross {
+        &::before,&::after {
+            @include size(85%,10%);
+            background-color: $color_blue;
+            border-radius: 50px;
+        }
+        &::before {
+            transform: translate(-50%,-50%) rotate(45deg);
+        }
+        &::after {
+            transform: translate(-50%,-50%) rotate(-45deg);
+        }
+    }
+}
+

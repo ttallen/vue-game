@@ -1,0 +1,108 @@
+html, body {
+  background-color: #1D1E22;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.block_area {
+  width: 450px;
+  height: 450px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 475px) {
+  .block_area {
+    width: 90vw;
+    height: 90vw;
+  }
+}
+
+.block {
+  width: 150px;
+  height: 150px;
+  border: solid #fff 1px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 475px) {
+  .block {
+    width: 30vw;
+    height: 30vw;
+  }
+}
+
+.block.small {
+  width: 50px;
+  height: 50px;
+}
+
+.block::after, .block::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.block.circle::after, .block.circle::before {
+  border-radius: 50%;
+}
+
+.block.circle::before {
+  width: 75%;
+  height: 75%;
+  background-color: #f42;
+}
+
+.block.circle::after {
+  width: 55%;
+  height: 55%;
+  background-color: #1D1E22;
+}
+
+.block.cross::before, .block.cross::after {
+  width: 85%;
+  height: 10%;
+  background-color: #56f;
+  border-radius: 50px;
+}
+
+.block.cross::before {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.block.cross::after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+/*# sourceMappingURL=style.css.map */
