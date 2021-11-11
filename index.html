@@ -15,6 +15,12 @@
 </head>
 <body>
     <div id="app">
+        <div :class="{tic_tac_toe: start == 0,bg_none: start == 1}">
+            <h1>井字遊戲</h1>
+            <div class="game_start" @click="game_start">
+                <h1>遊戲開始</h1>
+            </div>
+        </div>
         <h1>{{ win_text }}</h1>
         <ul class="game_text">
             <li class="block left circle"></li>

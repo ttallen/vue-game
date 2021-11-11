@@ -56,6 +56,9 @@ var vm = new Vue({
             this.step = 0;
             this.end = false;
         },
+        game_start() {
+            return this.start = 1;
+        },
         go(block){
             for(var i = 0; i < 8; i++) {
                 var [a,b,c] = this.check_list[i];

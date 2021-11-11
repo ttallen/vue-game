@@ -20,6 +20,50 @@ html, body {
           align-items: center;
 }
 
+.tic_tac_toe {
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tic_tac_toe .game_start {
+  cursor: pointer;
+  color: #fff;
+  padding: 5px 10px;
+  border: 3px solid #fff;
+  border-radius: 10px;
+}
+
+.tic_tac_toe .game_start h1 {
+  margin: 0;
+}
+
+.tic_tac_toe .game_start:hover {
+  color: #efff5c;
+  border: 3px solid #efff5c;
+}
+
+.bg_none {
+  display: none;
+}
+
 .game_text {
   display: -webkit-box;
   display: -ms-flexbox;
